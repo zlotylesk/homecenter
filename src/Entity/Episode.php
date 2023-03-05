@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\EpisodeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: EpisodeRepository::class)]
 class Episode
@@ -14,10 +17,13 @@ class Episode
     private ?int $id = null;
 
     #[ORM\Column]
-
+    #[Assert\NotBlank]
+    #[Assert\GreaterThan(0)]
     private ?int $number = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 2, max: 255)]
     private ?string $title = null;
 
     #[ORM\ManyToOne(inversedBy: 'episodes')]

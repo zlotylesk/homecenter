@@ -30,6 +30,21 @@ class Episode
     #[ORM\JoinColumn(nullable: false)]
     private ?Season $season = null;
 
+    public function __toString(): string
+    {
+        return sprintf(
+            '%d x %d: %s',
+            $this->season->getNumber(),
+            $this->number,
+            $this->title,
+        );
+    }
+
+    public function getTvShow(): TvShow
+    {
+        return $this->season?->getTvShow();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

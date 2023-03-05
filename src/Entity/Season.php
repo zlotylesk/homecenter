@@ -35,6 +35,11 @@ class Season
         $this->episodes = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return sprintf('%s: Season %d', $this->tvShow ,$this->number);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

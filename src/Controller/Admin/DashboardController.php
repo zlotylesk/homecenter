@@ -7,6 +7,7 @@ namespace App\Controller\Admin;
 use App\Entity\Episode;
 use App\Entity\Season;
 use App\Entity\TvShow;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -36,7 +37,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::subMenu('Blog', 'fa fa-article')->setSubItems([
+        yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
+        yield MenuItem::subMenu('Tv Series', 'fa fa-tv')->setSubItems([
             MenuItem::linkToCrud('Tv Show', 'fas fa-list', TvShow::class),
             MenuItem::linkToCrud('Season', 'fas fa-list', Season::class),
             MenuItem::linkToCrud('Episode', 'fas fa-list', Episode::class),

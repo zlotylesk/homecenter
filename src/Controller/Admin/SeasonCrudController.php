@@ -11,7 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 
-class SeasonCrudController extends AbstractCrudController
+class SeasonCrudController extends AdminBaseController
 {
     public static function getEntityFqcn(): string
     {

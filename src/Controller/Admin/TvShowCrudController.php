@@ -11,7 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class TvShowCrudController extends AbstractCrudController
+class TvShowCrudController extends AdminBaseController
 {
     public static function getEntityFqcn(): string
     {

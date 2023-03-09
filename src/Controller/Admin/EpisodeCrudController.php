@@ -17,13 +17,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Form\Extension\CollectionTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
-class EpisodeCrudController extends AbstractCrudController
+class EpisodeCrudController extends AdminBaseController
 {
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
-    }
-
     public static function getEntityFqcn(): string
     {
         return Episode::class;
